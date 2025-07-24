@@ -47,31 +47,124 @@
     <a href="#contact" class="btn">無料相談する</a>
   </section>
   <section class="services" id="services">
-    <h3>サービス内容</h3>
-    <div class="service-grid">
-      <div class="card">
-        <h4>ロゴデザイン</h4>
-        <p>ブランドの顔となるロゴをシンプルかつ印象的に。</p>
-      </div>
-      <div class="card">
-        <h4>Webデザイン</h4>
-        <p>スマホ対応の美しいWebサイトを構築します。</p>
-      </div>
-      <div class="card">
-        <h4>ECサイト制作</h4>
-        <p>ショップの立ち上げから運営までフルサポート。</p>
-      </div>
-      <div class="card">
-        <h4>名刺・チラシ</h4>
-        <p>伝わる印刷物でビジネスの第一印象をサポート。</p>
-      </div>
-      <div class="card">
-        <h4>スタートアップ支援</h4>
-        <p>デザインを通じて事業の立ち上げを全面サポート。</p>
-      </div>
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <h3 class="font-serif text-3xl font-bold text-center text-slate-800 mb-12">
+      サービス一覧 ＆ 見積もり計算
+    </h3>
+
+    <!-- 合計金額表示 -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-8 text-center">
+      <h4 class="font-serif text-2xl font-semibold text-slate-800 mb-2">合計金額</h4>
+      <div class="text-3xl font-bold text-blue-600" id="totalPrice">¥0</div>
+      <div class="text-sm text-slate-500 mt-1">(税込)</div>
     </div>
-  </section>
-  <section class="flow" id="flow">
+
+    <!-- サービスカード -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- ロゴデザイン -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-slate-100" data-base-price="5000">
+        <div class="flex justify-between items-start mb-4">
+          <h4 class="font-serif text-xl font-semibold text-slate-800">ロゴデザイン</h4>
+          <span class="text-blue-600 font-semibold text-lg">¥5,000〜</span>
+        </div>
+        <p class="text-slate-600 mb-4">シンプルで印象的なロゴデザイン（3案提案）</p>
+        <label class="flex items-center">
+          <input type="checkbox" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500" onchange="updatePrice(this, 3000)">
+          <span class="ml-2 text-sm text-slate-600">名刺セット (+¥3,000)</span>
+        </label>
+      </div>
+
+      <!-- ECサイト制作 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-slate-100" data-base-price="50000">
+        <div class="flex justify-between items-start mb-4">
+          <h4 class="font-serif text-xl font-semibold text-slate-800">ECサイト制作</h4>
+          <span class="text-purple-600 font-semibold text-lg">¥50,000〜</span>
+        </div>
+        <p class="text-slate-600 mb-4">Shopifyを使ったオンラインショップ構築</p>
+        <label class="flex items-center mb-2">
+          <input type="checkbox" class="rounded border-slate-300 text-purple-600 focus:ring-purple-500" onchange="updatePrice(this, 10000)">
+          <span class="ml-2 text-sm text-slate-600">商品登録10件 (+¥10,000)</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="rounded border-slate-300 text-purple-600 focus:ring-purple-500" onchange="updatePrice(this, 12000)">
+          <span class="ml-2 text-sm text-slate-600">多言語対応 (+¥12,000)</span>
+        </label>
+      </div>
+
+      <!-- Webデザイン -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-slate-100" data-base-price="30000">
+        <div class="flex justify-between items-start mb-4">
+          <h4 class="font-serif text-xl font-semibold text-slate-800">Webデザイン</h4>
+          <span class="text-green-600 font-semibold text-lg">¥30,000〜</span>
+        </div>
+        <p class="text-slate-600 mb-4">企業・個人向けのレスポンシブWebデザイン</p>
+        <label class="flex items-center mb-2">
+          <input type="checkbox" class="rounded border-slate-300 text-green-600 focus:ring-green-500" onchange="updatePrice(this, 5000)">
+          <span class="ml-2 text-sm text-slate-600">SEO対策 (+¥5,000)</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="rounded border-slate-300 text-green-600 focus:ring-green-500" onchange="updatePrice(this, 8000)">
+          <span class="ml-2 text-sm text-slate-600">アニメーション効果 (+¥8,000)</span>
+        </label>
+      </div>
+
+      <!-- 名刺・チラシ -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-slate-100" data-base-price="10000">
+        <div class="flex justify-between items-start mb-4">
+          <h4 class="font-serif text-xl font-semibold text-slate-800">名刺・チラシ</h4>
+          <span class="text-emerald-600 font-semibold text-lg">¥10,000〜</span>
+        </div>
+        <p class="text-slate-600 mb-4">名刺・フライヤーなど印刷物デザイン</p>
+        <label class="flex items-center mb-2">
+          <input type="checkbox" class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500" onchange="updatePrice(this, 2000)">
+          <span class="ml-2 text-sm text-slate-600">光沢仕上げ (+¥2,000)</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500" onchange="updatePrice(this, 5000)">
+          <span class="ml-2 text-sm text-slate-600">両面印刷 (+¥5,000)</span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  let totalPrice = 0;
+  let selectedServices = new Map();
+
+  function updatePrice(element, price) {
+    const card = element.closest('.bg-white');
+    const serviceKey = `${card.querySelector('h4').textContent}_${element.parentNode.textContent.trim()}`;
+    
+    if (element.checked) {
+      selectedServices.set(serviceKey, price);
+    } else {
+      selectedServices.delete(serviceKey);
+    }
+    calculateTotal();
+  }
+
+  function calculateTotal() {
+    let total = 0;
+
+    // 基本価格を加算（オプションが1つでも選ばれているサービスのみ）
+    document.querySelectorAll('.bg-white[data-base-price]').forEach(card => {
+      if (card.querySelector('input:checked')) {
+        total += parseInt(card.dataset.basePrice);
+      }
+    });
+
+    // オプション価格加算
+    selectedServices.forEach(price => {
+      total += price;
+    });
+
+    document.getElementById('totalPrice').textContent = `¥${total.toLocaleString()}`;
+  }
+</script>
+
     <h3>制作の流れ</h3>
     <div class="steps">
       <div class="step"><span>1</span>ヒアリング：アイデア共有</div>
