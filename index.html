@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COLORSデザイン</title>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans JP',sans-serif;}
+    body {background-color:#fff;color:#333;line-height:1.6;}
+    header {padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:1000;}
+    header h1 {font-size:24px;font-weight:bold;letter-spacing:1px;}
+    nav ul {display:flex;list-style:none;gap:20px;}
+    nav ul li a {text-decoration:none;color:#333;font-weight:bold;}
+    .hero {text-align:center;padding:100px 20px;background:#fff;}
+    .hero h2 {font-size:36px;margin-bottom:10px;font-weight:bold;}
+    .hero p {font-size:18px;margin-bottom:30px;color:#555;}
+    .btn {display:inline-block;padding:12px 30px;background:linear-gradient(90deg,#ff7676,#fbbd61,#76c7ff,#a78bfa);color:#fff;border-radius:30px;text-decoration:none;font-weight:bold;transition:0.3s ease;}
+    .btn:hover {opacity:0.8;}
+    .services {text-align:center;padding:80px 20px;}
+    .services h3 {font-size:28px;margin-bottom:40px;}
+    .service-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:auto;}
+    .card {background:#fafafa;border-radius:12px;padding:20px;box-shadow:0 2px 5px rgba(0,0,0,0.05);transition:0.3s;}
+    .card:hover {transform:translateY(-5px);}
+    .card h4 {font-size:20px;margin-bottom:10px;}
+    .flow {padding:80px 20px;text-align:center;background:#f8f8f8;}
+    .flow h3 {font-size:28px;margin-bottom:40px;}
+    .steps {display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
+    .step {width:220px;padding:20px;background:#fff;border-radius:12px;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+    .step span {display:block;font-size:24px;color:#fbbd61;margin-bottom:10px;font-weight:bold;}
+    footer {text-align:center;padding:30px 20px;font-size:14px;background:#fff;border-top:1px solid #eee;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>COLORSデザイン</h1>
+    <nav>
+      <ul>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="#flow">制作の流れ</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>アイデアを、もっとカラフルに。もっと印象的に。</h2>
+    <p>スタートアップや個人事業の“最初の一歩”を、ロゴからECサイトまでトータルサポート。AIを活用し、低コストでハイクオリティなデザインを提供します。</p>
+    <a href="#contact" class="btn">無料相談する</a>
+  </section>
+  <section class="services" id="services">
+    <h3>サービス内容</h3>
+    <div class="service-grid">
+      <div class="card">
+        <h4>ロゴデザイン</h4>
+        <p>ブランドの顔となるロゴをシンプルかつ印象的に。</p>
+      </div>
+      <div class="card">
+        <h4>Webデザイン</h4>
+        <p>スマホ対応の美しいWebサイトを構築します。</p>
+      </div>
+      <div class="card">
+        <h4>ECサイト制作</h4>
+        <p>ショップの立ち上げから運営までフルサポート。</p>
+      </div>
+      <div class="card">
+        <h4>名刺・チラシ</h4>
+        <p>伝わる印刷物でビジネスの第一印象をサポート。</p>
+      </div>
+      <div class="card">
+        <h4>スタートアップ支援</h4>
+        <p>デザインを通じて事業の立ち上げを全面サポート。</p>
+      </div>
+    </div>
+  </section>
+  <section class="flow" id="flow">
+    <h3>制作の流れ</h3>
+    <div class="steps">
+      <div class="step"><span>1</span>ヒアリング：アイデア共有</div>
+      <div class="step"><span>2</span>デザイン提案：方向性決定</div>
+      <div class="step"><span>3</span>制作：カラフルな世界観を形に</div>
+      <div class="step"><span>4</span>納品・サポート</div>
+    </div>
+  </section>
+  <footer>
+    <p>© COLORSデザイン | 新潟県長岡市</p>
+  </footer>
+</body>
+</html>
