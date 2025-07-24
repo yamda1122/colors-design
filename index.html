@@ -4,181 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COLORSデザイン</title>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Noto Sans JP',sans-serif; }
+    body { background:#fff; color:#333; line-height:1.6; }
+    header { padding:20px 40px; display:flex; justify-content:space-between; align-items:center; background:#fff; border-bottom:1px solid #eee; }
+    header h1 { font-size:24px; font-weight:bold; }
+    nav ul { display:flex; list-style:none; gap:20px; }
+    nav ul li a { text-decoration:none; color:#333; font-weight:bold; }
+    .hero { text-align:center; padding:100px 20px; }
+    .hero h2 { font-size:36px; margin-bottom:10px; font-weight:bold; }
+    .hero p { font-size:18px; margin-bottom:30px; color:#555; }
+    .btn {
+      display:inline-block; padding:12px 30px;
+      background:linear-gradient(90deg,#ff7676,#fbbd61,#76c7ff,#a78bfa);
+      color:#fff; border-radius:30px; text-decoration:none; font-weight:bold;
+    }
+    .btn:hover { opacity:0.8; }
+    footer { text-align:center; padding:30px 20px; font-size:14px; background:#fff; border-top:1px solid #eee; }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
-  <!-- Header -->
-  <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-2xl font-bold">COLORSデザイン</h1>
-      <nav>
-        <ul class="flex gap-6 text-sm font-medium">
-          <li><a href="#services" class="hover:text-blue-500">サービス</a></li>
-          <li><a href="#flow" class="hover:text-blue-500">制作の流れ</a></li>
-          <li><a href="#contact" class="hover:text-blue-500">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <h1>COLORSデザイン</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">サービス</a></li>
+        <li><a href="price.html">価格表</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero -->
-  <section class="text-center py-20 bg-gradient-to-br from-indigo-50 to-blue-50">
-    <h2 class="text-4xl font-bold mb-4">アイデアを、もっとカラフルに。もっと印象的に。</h2>
-    <p class="text-lg text-gray-600 max-w-xl mx-auto mb-6">
-      スタートアップや個人事業の“最初の一歩”を、ロゴからECサイトまでトータルサポート。
-      AIを活用し、低コストでハイクオリティなデザインを提供します。
-    </p>
-    <a href="#contact" class="bg-gradient-to-r from-pink-500 to-orange-400 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">無料相談する</a>
+  <section class="hero">
+    <h2>アイデアを、もっとカラフルに。もっと印象的に。</h2>
+    <p>スタートアップや個人事業の“最初の一歩”を、ロゴからECサイトまでトータルサポート。</p>
+    <a href="price.html" class="btn">価格表を見る</a>
   </section>
 
-  <!-- Services with Calculator -->
-  <section class="max-w-6xl mx-auto px-6 py-16" id="services">
-    <h3 class="text-3xl font-bold text-center mb-12">サービス一覧 ＆ 見積もり計算</h3>
-
-    <!-- Total Display -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 mb-10 text-center">
-      <h4 class="text-xl font-semibold mb-2">合計金額</h4>
-      <div class="text-3xl font-bold text-blue-600" id="totalPrice">¥0</div>
-      <div class="text-sm text-gray-500 mt-1">(税込)</div>
-    </div>
-
-    <!-- Cards -->
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <!-- Logo Design -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-gray-200" data-base-price="5000">
-        <div class="flex justify-between items-start mb-4">
-          <h4 class="text-xl font-semibold">ロゴデザイン</h4>
-          <span class="text-blue-600 font-semibold">¥5,000〜</span>
-        </div>
-        <p class="text-gray-600 mb-4">シンプルで印象的なロゴデザイン（3案提案）</p>
-        <label class="flex items-center">
-          <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500" onchange="updatePrice(this, 3000)">
-          <span class="ml-2 text-sm">名刺セット (+¥3,000)</span>
-        </label>
-      </div>
-
-      <!-- ECサイト制作 -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-gray-200" data-base-price="50000">
-        <div class="flex justify-between items-start mb-4">
-          <h4 class="text-xl font-semibold">ECサイト制作</h4>
-          <span class="text-purple-600 font-semibold">¥50,000〜</span>
-        </div>
-        <p class="text-gray-600 mb-4">Shopifyを使ったオンラインショップ構築</p>
-        <label class="flex items-center mb-2">
-          <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" onchange="updatePrice(this, 10000)">
-          <span class="ml-2 text-sm">商品登録10件 (+¥10,000)</span>
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500" onchange="updatePrice(this, 12000)">
-          <span class="ml-2 text-sm">多言語対応 (+¥12,000)</span>
-        </label>
-      </div>
-
-      <!-- Web Design -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-gray-200" data-base-price="30000">
-        <div class="flex justify-between items-start mb-4">
-          <h4 class="text-xl font-semibold">Webデザイン</h4>
-          <span class="text-green-600 font-semibold">¥30,000〜</span>
-        </div>
-        <p class="text-gray-600 mb-4">企業・個人向けのレスポンシブWebデザイン</p>
-        <label class="flex items-center mb-2">
-          <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500" onchange="updatePrice(this, 5000)">
-          <span class="ml-2 text-sm">SEO対策 (+¥5,000)</span>
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500" onchange="updatePrice(this, 8000)">
-          <span class="ml-2 text-sm">アニメーション効果 (+¥8,000)</span>
-        </label>
-      </div>
-
-      <!-- 名刺・チラシ -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-gray-200" data-base-price="10000">
-        <div class="flex justify-between items-start mb-4">
-          <h4 class="text-xl font-semibold">名刺・チラシ</h4>
-          <span class="text-emerald-600 font-semibold">¥10,000〜</span>
-        </div>
-        <p class="text-gray-600 mb-4">名刺・フライヤーなど印刷物デザイン</p>
-        <label class="flex items-center mb-2">
-          <input type="checkbox" class="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500" onchange="updatePrice(this, 2000)">
-          <span class="ml-2 text-sm">光沢仕上げ (+¥2,000)</span>
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500" onchange="updatePrice(this, 5000)">
-          <span class="ml-2 text-sm">両面印刷 (+¥5,000)</span>
-        </label>
-      </div>
-    </div>
-  </section>
-
-  <!-- 制作の流れ -->
-  <section class="bg-gray-50 py-16" id="flow">
-    <h3 class="text-3xl font-bold text-center mb-12">制作の流れ</h3>
-    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6">
-      <div class="text-center">
-        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">1</div>
-        <h4 class="font-semibold mb-2">ヒアリング</h4>
-        <p class="text-sm text-gray-600">ご要望やイメージを詳しくお聞きします</p>
-      </div>
-      <div class="text-center">
-        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">2</div>
-        <h4 class="font-semibold mb-2">提案</h4>
-        <p class="text-sm text-gray-600">デザイン案・方向性の提案</p>
-      </div>
-      <div class="text-center">
-        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">3</div>
-        <h4 class="font-semibold mb-2">制作</h4>
-        <p class="text-sm text-gray-600">実制作とフィードバック対応</p>
-      </div>
-      <div class="text-center">
-        <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">4</div>
-        <h4 class="font-semibold mb-2">納品</h4>
-        <p class="text-sm text-gray-600">完成データ納品＆サポート</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-6 border-t border-gray-200 text-sm">
+  <footer>
     © COLORSデザイン | 新潟県長岡市
   </footer>
 
-  <!-- 計算機スクリプト -->
-  <script>
-    let selectedServices = new Map();
-
-    function updatePrice(element, price) {
-      const card = element.closest('.bg-white');
-      const serviceKey = `${card.querySelector('h4').textContent}_${element.parentNode.textContent.trim()}`;
-
-      if (element.checked) {
-        selectedServices.set(serviceKey, price);
-      } else {
-        selectedServices.delete(serviceKey);
-      }
-      calculateTotal();
-    }
-
-    function calculateTotal() {
-      let total = 0;
-
-      // 基本価格（オプションを1つ以上選んだカードだけ加算）
-      document.querySelectorAll('.bg-white[data-base-price]').forEach(card => {
-        if (card.querySelector('input:checked')) {
-          total += parseInt(card.dataset.basePrice);
-        }
-      });
-
-      // オプション価格加算
-      selectedServices.forEach(price => {
-        total += price;
-      });
-
-      document.getElementById('totalPrice').textContent = `¥${total.toLocaleString()}`;
-    }
-  </script>
 </body>
 </html>
